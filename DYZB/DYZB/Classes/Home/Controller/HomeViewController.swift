@@ -12,25 +12,29 @@ private let kTitleViewH : CGFloat = 40
 
 class HomeViewController: UIViewController {
      //MARK:- 懒加载属性
-    lazy var pageTitleView : PageTitleView = {
+    lazy var pageTitleView : PageTitleView = {[weak self] in
         let titleFrame = CGRect(x:0,y:kStatusBarH + kNavigationH,width:kScreenW,height:kTitleViewH)
         let titles = ["推荐", "游戏", "娱乐", "趣玩"]
-        let titleView = PageTitleView(frame: titleFrame, titles: titles)
+        let titleView = PageTitleView(frame: titleFrame, titles : titles)
+        titleView.delegate = self
         return titleView
+        
     }()
     
     lazy var pageContentView : PageContentView = {[weak self] in
         //1.确定内容的frame
-        let contentH = kScreenH - kStatusBarH - kNavigationH - kTitleViewH
+        let contentH = kScreenH - kStatusBarH - kNavigationH - kTitleViewH - kTabBarH
         let contentFrame = CGRect(x: 0,y: kStatusBarH + kNavigationH + kTitleViewH,width: kScreenW,height:contentH)
         //2.确定所有的子控制器
         var childVcs = [UIViewController]()
+        childVcs.append(RecommendViewController())
         for _ in 0...3{
             let vc = UIViewController()
             vc.view.backgroundColor = UIColor(r: CGFloat(arc4random_uniform(255)), g: CGFloat(arc4random_uniform(255)),b:CGFloat(arc4random_uniform(255)))
             childVcs.append(vc)
         }
         let contentView = PageContentView(frame: contentFrame, childVcs: childVcs,parentViewController:self)
+        contentView.delegate = self
         return contentView
     }()
     
@@ -76,4 +80,19 @@ extension HomeViewController {
     navigationItem.rightBarButtonItems = [historyItem, searchItem, qrcodeItem]
     }
 
+}
+
+//Mark:- 遵守PageTitleViewDelegate
+extension HomeViewController : PageTitleViewDelegate{
+
+    func pageTitleView(titleView: PageTitleView, selectedIndex index: Int) {
+        pageContentView.setCurrentIndex(currentIndex: index)
+    }
+}
+
+//Mark:- 遵守PageContentViewDelegate
+extension HomeViewController : PageContentViewDelegate{
+    func pageContentView(contentView: PageContentView, progress: CGFloat, sourceIndex: Int, targetIndex: Int) {
+        pageTitleView.setTitleVeiwProgress(progress: progress, sourceIndex: sourceIndex, targetIndex: targetIndex)
+    }
 }
