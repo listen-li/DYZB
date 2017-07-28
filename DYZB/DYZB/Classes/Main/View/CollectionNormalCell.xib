@@ -79,6 +79,12 @@
                 <constraint firstAttribute="trailing" secondItem="PLR-61-W4m" secondAttribute="trailing" constant="5" id="yr3-dM-vdg"/>
             </constraints>
             <size key="customSize" width="201" height="171"/>
+            <connections>
+                <outlet property="iconImageView" destination="whz-4M-Oi6" id="5pR-aC-0w6"/>
+                <outlet property="nickNameLabel" destination="6yZ-eq-X7z" id="9U1-Ac-mBV"/>
+                <outlet property="onlineBtn" destination="9Cf-AD-IAc" id="QcE-D5-u6K"/>
+                <outlet property="roomNameLabel" destination="PLR-61-W4m" id="egG-nB-QsU"/>
+            </connections>
             <point key="canvasLocation" x="100.5" y="112.5"/>
         </collectionViewCell>
     </objects>

@@ -17,13 +17,13 @@
                 <rect key="frame" x="0.0" y="0.0" width="145" height="167"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3PY-UE-Q3u">
-                        <rect key="frame" x="0.0" y="143" width="34" height="14"/>
+                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3PY-UE-Q3u">
+                        <rect key="frame" x="0.0" y="143" width="46" height="14"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="14" id="3rN-zt-Bdk"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                        <state key="normal" title="广州市">
+                        <state key="normal" title="广州市" image="home_live_vertical_locate">
                             <color key="titleColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                         </state>
                     </button>
@@ -45,23 +45,27 @@
                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                         </userDefinedRuntimeAttributes>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="666在线" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2aN-nM-WIn">
-                        <rect key="frame" x="80" y="5" width="60" height="20"/>
+                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IbT-3c-vzJ">
+                        <rect key="frame" x="77" y="8" width="60" height="20"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+                        <accessibility key="accessibilityConfiguration">
+                            <accessibilityTraits key="traits" button="YES" notEnabled="YES"/>
+                        </accessibility>
                         <constraints>
-                            <constraint firstAttribute="width" constant="60" id="rgc-rB-ZWR"/>
-                            <constraint firstAttribute="height" constant="20" id="xr3-L5-gGB"/>
+                            <constraint firstAttribute="height" constant="20" id="ecQ-zi-c0D"/>
+                            <constraint firstAttribute="width" constant="60" id="jVk-vG-IZL"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
+                        <state key="normal" title="6666在线">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                 <integer key="value" value="3"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                         </userDefinedRuntimeAttributes>
-                    </label>
+                    </button>
                 </subviews>
             </view>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -72,17 +76,24 @@
                 <constraint firstItem="x6f-Qr-Z6g" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="5Cf-Pf-zOz"/>
                 <constraint firstAttribute="bottom" secondItem="3PY-UE-Q3u" secondAttribute="bottom" constant="10" id="7FL-hk-UD0"/>
                 <constraint firstItem="eia-bj-jym" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="FzU-Df-LaX"/>
+                <constraint firstAttribute="trailing" secondItem="IbT-3c-vzJ" secondAttribute="trailing" constant="8" id="L8M-QG-k7h"/>
                 <constraint firstAttribute="trailing" secondItem="x6f-Qr-Z6g" secondAttribute="trailing" id="SmF-NQ-Pdg"/>
-                <constraint firstItem="2aN-nM-WIn" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="TOn-5t-bep"/>
-                <constraint firstAttribute="trailing" secondItem="2aN-nM-WIn" secondAttribute="trailing" constant="5" id="i3e-Pe-4md"/>
+                <constraint firstItem="IbT-3c-vzJ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="Tac-Ez-aDR"/>
                 <constraint firstItem="x6f-Qr-Z6g" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="wcD-mA-dSv"/>
                 <constraint firstAttribute="trailing" secondItem="eia-bj-jym" secondAttribute="trailing" constant="5" id="zQP-SB-WRC"/>
             </constraints>
             <size key="customSize" width="145" height="167"/>
+            <connections>
+                <outlet property="cityBtn" destination="3PY-UE-Q3u" id="ZkW-ii-fGF"/>
+                <outlet property="iconImageView" destination="x6f-Qr-Z6g" id="YCm-si-EEx"/>
+                <outlet property="nickNameLabel" destination="eia-bj-jym" id="WHr-NB-3PP"/>
+                <outlet property="onlineBtn" destination="IbT-3c-vzJ" id="fwj-JI-yTQ"/>
+            </connections>
             <point key="canvasLocation" x="72.5" y="120.5"/>
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="home_live_vertical_locate" width="12" height="12"/>
         <image name="live_cell_default_phone" width="103" height="103"/>
     </resources>
 </document>

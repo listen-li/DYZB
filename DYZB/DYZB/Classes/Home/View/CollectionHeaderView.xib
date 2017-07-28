@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="U6b-Vx-4bR">
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="U6b-Vx-4bR" customClass="CollectionHeaderView" customModule="DYZB" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
@@ -59,6 +59,10 @@
                 <constraint firstItem="f2j-rw-aGI" firstAttribute="centerY" secondItem="3Dg-Bf-uqe" secondAttribute="centerY" id="pdf-W7-iTU"/>
                 <constraint firstAttribute="bottom" secondItem="3Dg-Bf-uqe" secondAttribute="bottom" constant="11" id="prd-rV-W2e"/>
             </constraints>
+            <connections>
+                <outlet property="iconImageView" destination="3Dg-Bf-uqe" id="7ga-Xk-csf"/>
+                <outlet property="titleLabel" destination="f2j-rw-aGI" id="kfG-LW-E9j"/>
+            </connections>
         </collectionReusableView>
     </objects>
     <resources>
