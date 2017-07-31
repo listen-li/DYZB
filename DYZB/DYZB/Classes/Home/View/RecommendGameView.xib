@@ -13,9 +13,33 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="RecommendGameView" customModule="DYZB" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" red="1" green="0.86846472519999995" blue="0.52991087910000001" alpha="1" colorSpace="calibratedRGB"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Z2R-lB-cUj">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="TPE-HU-Pdg">
+                        <size key="itemSize" width="80" height="90"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="iN0-l3-epB" id="LTf-Gu-8Ls"/>
+                    </connections>
+                </collectionView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Z2R-lB-cUj" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="2xA-6b-oEr"/>
+                <constraint firstItem="Z2R-lB-cUj" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="dPa-tL-OOn"/>
+                <constraint firstAttribute="trailing" secondItem="Z2R-lB-cUj" secondAttribute="trailing" id="mF4-Cj-WZ9"/>
+                <constraint firstAttribute="bottom" secondItem="Z2R-lB-cUj" secondAttribute="bottom" id="zeI-Zf-Clu"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="58.5" y="-86.5"/>
+            <connections>
+                <outlet property="collectionView" destination="Z2R-lB-cUj" id="bxf-su-1Uc"/>
+            </connections>
+            <point key="canvasLocation" x="58.5" y="-87"/>
         </view>
     </objects>
 </document>
