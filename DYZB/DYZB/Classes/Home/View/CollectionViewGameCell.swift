@@ -17,10 +17,11 @@ class CollectionViewGameCell: UICollectionViewCell {
     
     
     //Mark:- 定义模型属性
-    var group : AnchorGroup? {
+    var baseGame : BaseGameModel? {
         didSet {
-            titleLabel.text = group?.tag_name
-            let iconURL = NSURL(string: group?.icon_url ?? "")
+            titleLabel.text = baseGame?.tag_name
+            let iconURL = NSURL(string: baseGame?.icon_url ?? "")
+            
             if iconURL == nil {
                 iconImageView.image = UIImage(named: "discovery_moreGeme")
             }else{

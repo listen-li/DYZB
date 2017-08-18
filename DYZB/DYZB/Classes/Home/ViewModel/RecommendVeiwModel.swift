@@ -71,7 +71,6 @@ extension RecommendVeiwModel{
                 let anchor = AnchorModel(dict: dict)
                 self.prettyGroup.anchors.append(anchor)
             }
-
             //3.3离开组
             disgroup.leave()
             
@@ -111,7 +110,7 @@ extension RecommendVeiwModel{
     //请求无限轮播的数据
     func requestCycleData(finishCallback : @escaping () -> ()) {
         NetworkTools.requestData(tape: .GET, URLString: "http://capi.douyucdn.cn/api/v1/slide/6", parameters: ["version" : "2.300"]) { (result) in
-            print(result)
+            
             //1.获取整体字典数据
             guard let resultDic = result as? [NSString : NSObject] else { return }
             
